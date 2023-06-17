@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Welcome to the Blog</title>
+    <style>
+      .arrow-button {
+        position: fixed;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 30px;
+        background-color: rgba(200, 142, 167, 0.8);
+        /* Modified background color with transparency */
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 15px;
+        text-decoration: none;
+        transform: rotate(-90deg);
+        /* Rotate the arrow to point right */
+      }
+
+      /* Global Styles */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(120deg, #FDD36A, #BE6DB7, #DC8449);
+      }
+
+      /* Header Styles */
+      header {
+        background: linear-gradient(120deg, #C04A82, #DC8449, rgba(0, 0, 0, 0));
+        color: #fff;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(120deg, #FDD36A, #BE6DB7, #DC8449);
+      }
+
+      /* Container Styles */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      /* Segment Styles */
+      .segment {
+        padding: 20px;
+        margin-bottom: 30px;
+        border-radius: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: #ECCDB4;
+      }
+
+      h2.segment-title {
+        margin: 0 0 20px;
+        font-size: 24px;
+        text-align: center;
+        color: #555;
+      }
+
+      /* Sub-Segment Styles */
+      .sub-segment {
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: #FEF2F4;
+      }
+
+      h3 {
+        margin: 0 0 10px;
+        font-size: 20px;
+        color: #555;
+      }
+
+      .brand {
+        margin-right: auto;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 32px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+
+      nav ul li {
+        margin-right: 10px;
+      }
+
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 5px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+      }
+
+      nav ul li a:hover {
+        background-color: #555;
+      }
+
+      .apply-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #FF82B4;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .apply-button.internship {
+        background-color: #64B5F6;
+      }
+
+      .apply-button:hover {
+        background-color: #FF94C7;
+      }
+
+      /* Container Styles */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      /* Segment Styles */
+      .segment {
+        padding: 20px;
+        margin-bottom: 30px;
+        border-radius: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+      }
+
+      h2 {
+        margin: 0 0 20px;
+        font-size: 24px;
+        text-align: center;
+        color: #555;
+      }
+
+      .read-button {
+        background-color: #7B2869;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+      }
+
+      .read-button:hover {
+        background-color: #9d357c;
+      }
+
+      /* News Feed Styles */
+      .news-feed {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .news-item {
+        background-color: #F8EAD8;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        color: #333;
+        transition: transform 0.3s;
+      }
+
+      .news-item:hover {
+        transform: scale(1.05);
+      }
+
+      .news-marquee {
+        animation: marquee 15s linear infinite;
+      }
+
+      @keyframes marquee {
+        0% {
+          transform: translateX(100%);
+        }
+
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      h3 {
+        margin: 0 0 10px;
+        font-size: 20px;
+        color: #555;
+      }
+
+      /* Upcoming Events Styles */
+      .events {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .event-item {
+        background-color: #C3ACD0;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        color: #fff;
+        transition: transform 0.3s;
+      }
+
+      .event-item:hover {
+        transform: scale(1.05);
+      }
+
+      /* Jobs Styles */
+      .jobs {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .job-item {
+        background-color: #EAE0DA;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        color: #333;
+        transition: transform 0.3s;
+      }
+
+      .job-item:hover {
+        transform: scale(1.05);
+      }
+
+      /* Footer Styles */
+      footer {
+        background: linear-gradient(120deg, rgba(0, 0, 0, 0), #DC8449, #FDD36A);
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        font-size: 14px;
+      }
+
+      footer p {
+        margin: 0;
+      }
+
+      /* Animation Styles */
+      @keyframes move-in-right {
+        0% {
+          opacity: 0;
+          transform: translateX(20px);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .animated {
+        animation-duration: 1s;
+        animation-fill-mode: both;
+      }
+
+      .fade-in {
+        opacity: 0;
+        animation-name: move-in-right;
+      }
+    </style>
+    <script>
+      function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        section.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <h1>Welcome to The Blogging Hub</h1>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="#Blog">Blog</a>
+          </li>
+          <li>
+            <a href="#News">News</a>
+          </li>
+          <li>
+            <a href="#Events">Events</a>
+          </li>
+          <li>
+            <a href="#Jobs">Jobs</a>
+          </li>
+          <li>
+            <a href="about.html">About</a>
+          </li>
+        </ul>
+      </nav>
+      <a href="#" class="apply-button">Apply for Internship</a>
+    </header>
+    <div class="container">
+      <br>
+      <h1 style="font-family: 'Roboto', sans-serif; font-size: 30px; font-weight: bold; color: #F9FBE7; text-align: right;">Unwind and Explore Our Blog Oasis</h1>
+      <br>
+      <!-- First Segment -->
+      <div class="segment" id="Blog">
+        <h2 style="font-size: 36px; color: #7B2869; text-align: center; margin-bottom: 40px; font-family: Arial, sans-serif;">Travel Blogs</h2>
+        <div class="sub-segments">
+          <div class="sub-segment">
+            <h3>A Guide to Adventure Travel: Thrilling Experiences Around the World </h3>
+            <button class="read-button" onclick="openFile('sub-segment1.html')">Read</button>
+          </div>
+          <div class="sub-segment">
+            <h3> UNESCO World Heritage Sites: Exploring Humanity's Treasures </h3>
+            <button class="read-button" onclick="openFile('sub-segment2.html')">Read</button>
+          </div>
+          <div class="sub-segment">
+            <h3> Road Trip Essentials: Packing Tips and Must-Have Items </h3>
+            <button class="read-button" onclick="openFile('sub-segment3.html')">Read</button>
+          </div>
+          <div class="sub-segment">
+            <h3> Volunteering Abroad: Making a Difference While Traveling </h3>
+            <button class="read-button" onclick="openFile('sub-segment4.html')">Read</button>
+          </div>
+          <div class="sub-segment">
+            <h3>Family-Friendly Destinations: Fun and Educational Trips for Kids </h3>
+            <button class="read-button" onclick="openFile('sub-segment5.html')">Read</button>
+          </div>
+          <div class="sub-segment">
+            <h3>Sustainable Travel: Responsible Tourism and Eco-Friendly Practices </h3>
+            <button class="read-button" onclick="openFile('sub-segment6.html')">Read</button>
+          </div>
+          <div class="sub-segment">
+            <h3> Foodie Adventures: Culinary Delights from Different Cultures</h3>
+            <button class="read-button" onclick="openFile('sub-segment7.html')">Read</button>
+          </div>
+        </div>
+      </div>
+      <!-- Second Segment -->
+      <div class="segment">
+        <h2 style="font-size: 36px; color: #7B2869; text-align: center; margin-bottom: 40px; font-family: Arial, sans-serif;">Health & Wellness Blogs</h2>
+        <div class="sub-segments">
+          <div class="sub-segment">
+            <h3>Mindfulness Meditation: Cultivating Inner Peace and Mental Clarity </h3>
+            <button class="read-button" onclick="openFile('sub-segment7.html')">Read</button>
+          </div>
+          <div class="sub-segment">
+            <h3>Yoga for Beginners: Poses and Practices to Enhance Well-being </h3>
+            <button class="read-button" onclick="openFile('sub-segment7.html')">Read</button>
+          </div>
+          <div class="sub-segment">
+            <h3>Natural Remedies for Common Ailments: Holistic Approaches to Health </h3>
+            <button class="read-button" onclick="openFile('sub-segment7.html')">Read</button>
+          </div>
+          <div class="sub-segment">
+            <h3>Stress Management Techniques: Coping Strategies for a Busy Life </h3>
+            <button class="read-button" onclick="openFile('sub-segment7.html')">Read</button>
+          </div>
+          <div class="sub-segment">
+            <h3>Stress Management Techniques: Coping Strategies for a Busy Life </h3>
+            <button class="read-button" onclick="openFile('sub-segment7.html')">Read</button>
+          </div>
+        </div>
+      </div>
+      <!-- Third Segment -->
+      <div class="segment">
+        <h2 style="font-size: 36px; color: #7B2869; text-align: center; margin-bottom: 40px; font-family: Arial, sans-serif;">Fashion & Beauty Blog</h2>
+        <div class="sub-segments">
+          <div class="sub-segment">
+            <h3>Fall Fashion Trends: Stylish Outfits for the Season </h3>
+            <button class="read-button" onclick="openFile('sub-segment7.html')">Read</button>
+          </div>
+          <div class="sub-segment">
+            <h3> Makeup Tips for a Natural, Everyday Look</h3>
+            <button class="read-button" onclick="openFile('sub-segment7.html')">Read</button>
+          </div>
+          <div class="sub-segment">
+            <h3>Iconic Fashion Moments: Celebrating Timeless Style </h3>
+            <button class="read-button" onclick="openFile('sub-segment7.html')">Read</button>
+          </div>
+          <div class="sub-segment">
+            <h3> How to Build a Capsule Wardrobe: Essential Pieces for Every Season </h3>
+            <button class="read-button" onclick="openFile('sub-segment7.html')">Read</button>
+          </div>
+          <div class="sub-segment">
+            <h3> Hairstyle Tutorials: Step-by-Step Guides for Trendy Looks </h3>
+            <button class="read-button" onclick="openFile('sub-segment7.html')">Read</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <section class="segment" style="background-color: #E8D5C4;" id="News">
+      <h2 style="color: #333; font-family: 'Arial', sans-serif; font-size: 28px; text-transform: uppercase; margin-bottom: 20px;">Latest News</h2>
+      <div class="news-feed news-marquee">
+        <div class="news-item animated fade-in" style="width: 400px; margin: 0 auto;">
+          <h3 style="color: #555; font-family: 'Georgia', serif; font-size: 24px; margin-bottom: 10px; text-align: center;">Coastal City Shaken by Earthquake</h3>
+          <p style="font-family: 'Arial', sans-serif; font-size: 16px; line-height: 1.5; text-align: justify;">A powerful earthquake measuring 6.5 on the Richter scale struck the picturesque coastal city of San Francisco, leaving residents in a state of panic. The epicenter of the earthquake was reported to be offshore, resulting in minor tsunamis along the coast. Local authorities are actively responding to the situation and assessing the extent of the damage caused. Stay updated for the latest developments on this evolving story.</p>
+        </div>
+        <div class="news-item animated fade-in" style="width: 400px; margin: 0 auto;">
+          <h3 style="color: #555; font-family: 'Georgia', serif; font-size: 24px; margin-bottom: 10px; text-align: center;">Breakthrough: AI Robot Performs Successful Surgery</h3>
+          <p style="font-family: 'Arial', sans-serif; font-size: 16px; line-height: 1.5; text-align: justify;">In a remarkable technological feat, an AI-powered robot accomplished a complex surgical procedure with extraordinary precision at a leading hospital. Equipped with advanced machine learning algorithms and cutting-edge instruments, the robot showcased exceptional accuracy and efficiency during the surgery. This groundbreaking achievement signifies a significant milestone in the field of robotic surgery, offering promising prospects for safer and more precise medical interventions.</p>
+        </div>
+        <div class="news-item animated fade-in" style="width: 400px; margin: 0 auto;">
+          <h3 style="color: #555; font-family: 'Georgia', serif; font-size: 24px; margin-bottom: 10px; text-align: center;">Teenage Entrepreneur Transforms Passion into Thriving Tech Startup</h3>
+          <p style="font-family: 'Arial', sans-serif; font-size: 16px; line-height: 1.5; text-align: justify;">Introducing Sarah, an extraordinary teenager who turned her love for coding into a flourishing tech startup. Through unwavering determination and hard work, she developed an innovative app that effectively solves a common industry problem. Sarah's entrepreneurial journey serves as an inspiring example for young minds, proving that age is no obstacle when it comes to achieving success.</p>
+        </div>
+      </div>
+    </section>
+    <br>
+    <br>
+    <section class="segment" style="background-color: #F8EAD8;" id="Events">
+      <h2 style="color: #333; font-family: Arial, sans-serif; font-size: 28px; text-transform: uppercase;">Upcoming Events</h2>
+      <div class="events">
+        <div class="event-item animated fade-in" id="event1">
+          <h3 style="color: #555; font-family: 'Georgia', serif; font-size: 24px; margin-bottom: 10px;">Music Concert</h3>
+          <p style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5;">Join us for an evening of live music and entertainment at our upcoming Music Concert. Experience the electrifying performances of renowned artists and bands from various genres. Get ready to dance, sing along, and create unforgettable memories. It's an event you don't want to miss!</p>
+        </div>
+        <div class="event-item animated fade-in" id="event2">
+          <h3 style="color: #555; font-family: 'Georgia', serif; font-size: 24px; margin-bottom: 10px;">Art Exhibition</h3>
+          <p style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5;">Immerse yourself in the world of art and creativity at our upcoming Art Exhibition. Discover captivating artworks by talented artists, explore diverse art forms and styles, and engage in thought-provoking conversations about art. Whether you're an art enthusiast or simply appreciate artistic expressions, this event promises to be a feast for the senses.</p>
+        </div>
+        <div class="event-item animated fade-in" id="event3">
+          <h3 style="color: #555; font-family: 'Georgia', serif; font-size: 24px; margin-bottom: 10px;">Food Festival</h3>
+          <p style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5;">Indulge your taste buds and embark on a culinary adventure at our upcoming Food Festival. Sample a wide array of delicious cuisines, experience flavors from around the world, and savor delectable dishes prepared by talented chefs. From street food delights to gourmet creations, this event is a paradise for food lovers.</p>
+        </div>
+        <div class="event-item animated fade-in" id="event4" style="display: none;">
+          <h3 style="color: #555; font-family: 'Georgia', serif; font-size: 24px; margin-bottom: 10px;">Fitness Workshop</h3>
+          <p style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5;">Join us for a dynamic and energizing Fitness Workshop designed to help you achieve your fitness goals. Participate in engaging workout sessions, learn valuable fitness techniques, and gain insights from fitness experts. Whether you're a fitness enthusiast or looking to kickstart your fitness journey, this workshop will inspire and empower you to lead a healthy lifestyle.</p>
+        </div>
+        <div class="event-item animated fade-in" id="event5" style="display: none;">
+          <h3 style="color: #555; font-family: 'Georgia', serif; font-size: 24px; margin-bottom: 10px;">Technology Conference</h3>
+          <p style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5;">Stay updated with the latest advancements in technology by attending our upcoming Technology Conference. Explore emerging technologies, attend insightful keynote sessions, and engage in discussions with industry experts. From AI to blockchain, this conference is a platform to gain knowledge, network, and unlock new opportunities in the tech world.</p>
+        </div>
+        <div class="event-item animated fade-in" id="event6" style="display: none;">
+          <h3 style="color: #555; font-family: 'Georgia', serif; font-size: 24px; margin-bottom: 10px;">Charity Run</h3>
+          <p style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5;">Make a difference and contribute to a noble cause by participating in our upcoming Charity Run. Lace up your running shoes, join fellow enthusiasts, and run for a purpose. Every step you take will help raise funds and create a positive impact in the lives of those in need. Let's run together for a better tomorrow!</p>
+        </div>
+      </div>
+    </section>
+    <script>
+      // Function to toggle visibility of events
+      function toggleEvents() {
+        var event1 = document.getElementById('event1');
+        var event2 = document.getElementById('event2');
+        var event3 = document.getElementById('event3');
+        var event4 = document.getElementById('event4');
+        var event5 = document.getElementById('event5');
+        var event6 = document.getElementById('event6');
+        if (event1.style.display === 'none') {
+          event1.style.display = 'block';
+          event2.style.display = 'block';
+          event3.style.display = 'block';
+          event4.style.display = 'none';
+          event5.style.display = 'none';
+          event6.style.display = 'none';
+        } else {
+          event1.style.display = 'none';
+          event2.style.display = 'none';
+          event3.style.display = 'none';
+          event4.style.display = 'block';
+          event5.style.display = 'block';
+          event6.style.display = 'block';
+        }
+      }
+      setTimeout(toggleEvents, 3650);
+      setInterval(toggleEvents, 3650);
+    </script>
+    <br>
+    <br>
+    <section class="segment" style="background-color: #C3ACD0;" id="Jobs">
+      <h2 style="color: #333; font-family: Arial, sans-serif; font-size: 28px; text-transform: uppercase;">Job Offers</h2>
+      <div class="jobs">
+        <div class="job-item animated slide-in">
+          <h3 style="color: #555; font-family: 'Georgia', serif; font-size: 24px; margin-bottom: 10px;">Frontend Developer</h3>
+          <p style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5;">Join our team as a Frontend Developer and contribute to building innovative web applications. We offer a competitive salary, generous benefits package, and flexible working hours. You'll have the opportunity to work with cutting-edge technologies and collaborate with a talented team of professionals. Apply now and be part of our exciting projects.</p>
+          <button class="apply-btn" style="font-family: Arial, sans-serif; font-size: 16px; background-color: #555; color: #FFF; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">Apply Now</button>
+        </div>
+        <div class="job-item animated slide-in">
+          <h3 style="color: #555; font-family: 'Georgia', serif; font-size: 24px; margin-bottom: 10px;">Data Scientist</h3>
+          <p style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5;">Join our innovative team as a Data Scientist and work on cutting-edge projects that shape the future. We are seeking a talented individual with a strong background in data analysis and machine learning. Enjoy a vibrant company culture, professional development opportunities, and perks like free gym membership. Don't miss the chance to be part of our dynamic team.</p>
+          <button class="apply-btn" style="font-family: Arial, sans-serif; font-size: 16px; background-color: #555; color: #FFF; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">Apply Now</button>
+        </div>
+        <div class="job-item animated slide-in">
+          <h3 style="color: #555; font-family: 'Georgia', serif; font-size: 24px; margin-bottom: 10px;">Marketing Specialist</h3>
+          <p style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5;">Join our marketing team as a Marketing Specialist and unleash your creativity. We offer a dynamic work environment, professional growth opportunities, and the chance to work on exciting campaigns. If you're passionate about marketing, enjoy thinking outside the box, and want to make a meaningful impact, apply now and be part of our journey.</p>
+          <button class="apply-btn" style="font-family: Arial, sans-serif; font-size: 16px; background-color: #555; color: #FFF; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">Apply Now</button>
+        </div>
+      </div>
+    </section>
+    <style>
+      /* Styling for the Jobs section */
+      #Jobs {
+        text-align: center;
+      }
+
+      /* Styling for the job items */
+      .job-item {
+        background-color: #FFF;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        display: inline-block;
+        text-align: left;
+        max-width: 400px;
+        width: 100%;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+      }
+
+      /* Animation for slide-in effect */
+      .slide-in {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Styling for the apply button */
+      .apply-btn {
+        background-color: #FFC107;
+        color: #FFF;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-out;
+      }
+
+      .apply-btn:hover {
+        background-color: #FFA000;
+      }
+    </style>
+    <script>
+      // JavaScript to trigger the slide-in animation
+      const jobItems = document.querySelectorAll('.job-item');
+
+      function activateSlideInAnimation() {
+        jobItems.forEach((item, index) => {
+          setTimeout(() => {
+            item.classList.add('slide-in');
+          }, (index + 1) * 500);
+        });
+      }
+      window.addEventListener('DOMContentLoaded', activateSlideInAnimation);
+    </script>
+    </div>
+    <br>
+    <br>
+    <div style="position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background-color: #8B1874; border-radius: 50%; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); font-family: Arial, sans-serif; transition: all 0.3s ease;" id="chatbotContainer" onclick="toggleChatbot()">
+      <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+        <div style="width: 40px; height: 40px; background-color: #fff; border-radius: 50%; transition: all 0.3s ease;" id="chatbotIcon"></div>
+      </div>
+      <div class="chatbot-body" style="display: none; padding: 10px; background-color: #7B2869; border-radius: 4px; font-family: Arial, sans-serif;">
+        <div style="padding: 8px; background-color: #FFEDD3; border-radius: 4px; margin-bottom: 5px;">Welcome! Did you like this page?</div>
+        <div style="display: flex; flex-direction: column; padding: 10px; background-color: #FFEDD3; border-radius: 4px; margin-bottom: 5px;">
+          <button style="margin-bottom: 5px; background-color: #7B2869; color: #fff; border: none; border-radius: 4px; cursor: pointer;" onclick="sendFeedback(true)">Yes</button>
+          <button style="margin-bottom: 5px; background-color: #7B2869; color: #fff; border: none; border-radius: 4px; cursor: pointer;" onclick="sendFeedback(false)">No</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      function toggleChatbot() {
+        const chatbotContainer = document.getElementById("chatbotContainer");
+        const chatbotIcon = document.getElementById("chatbotIcon");
+        const chatbotBody = document.querySelector(".chatbot-body");
+        chatbotContainer.style.width = chatbotContainer.style.width === "60px" ? "300px" : "60px";
+        chatbotContainer.style.height = chatbotContainer.style.width === "60px" ? "60px" : "auto";
+        chatbotIcon.style.borderRadius = chatbotContainer.style.width === "60px" ? "50%" : "0";
+        chatbotIcon.style.display = chatbotContainer.style.width === "60px" ? "block" : "none";
+        chatbotBody.style.display = chatbotContainer.style.width === "60px" ? "none" : "block";
+      }
+
+      function sendFeedback(liked) {
+        const chatbotBody = document.querySelector(".chatbot-body");
+        const feedbackMessage = liked ? "Thanks for your response!" : "We're sorry to hear that. Please let us know how we can improve.";
+        const messageClass = liked ? "chatbot-message" : "chatbot-message user-message";
+        const feedbackNode = document.createElement("div");
+        feedbackNode.className = messageClass;
+        feedbackNode.textContent = feedbackMessage;
+        chatbotBody.appendChild(feedbackNode);
+      }
+    </script>
+    <script>
+      function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        section.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    </script>
+    <a href="#" class="arrow-button" onclick="scrollToSection('header')"> →</a>
+    <!-- JavaScript function to scroll to the top section -->
+    <script>
+      function scrollToSection(id) {
+        var section = document.getElementById(id);
+        section.scrollIntoView({
+          behavior: "smooth"
+        });
+      }
+    </script>
+    <footer>
+      <p>&copy; 2023 Blog. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
